@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+#login{
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+#LoginPage{
+    display: flex;
+    flex-direction: column;
+}
+
+.inputbox{
+    margin: 5px 10px;
+    border: 2px solid white;
+}
+
+section {
+    border: 5px solid black;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formtag{
+    width: 90%;
+}
+
+/* table {
+    border: 2px solid red;
+    width: 90%;
+    height: 80vh;
+} */
+
+/* td {
+    border: 2px solid green;
+} */
+
+li{
+    list-style: none;
+}

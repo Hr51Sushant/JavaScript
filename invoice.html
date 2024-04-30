@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Generator</title>
+    <link rel="stylesheet" href="./invoice.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Invoice Input -->
+        <h3>Invoice Generator</h3>
+        <form id="invoiceForm">
+            <div id="one">
+                <input type="text" id="partyName" placeholder="Company Name">
+                <input type="text" id="address" placeholder="Address">
+                <input type="number" id="pincode" placeholder="Pin Code">
+                <input type="number" id="gst" placeholder="Gst No.">
+                <input type="number" id="vehclno" placeholder="Vehicle No.">
+            </div>
+
+            <div id="two">
+                <input list="products" name="product" id="product" placeholder="Select Products">
+                <datalist id="products">
+                    <option value="Rice"> <span>Basmati Rice Rs.<span id="rice" class="itemPrice">200</span>/- Kg</span>
+                    </option>
+                    <option value="Pulses"><span>Arhar Dal Rs.<span id="dal" class="itemPrice">60</span>/- Kg</span>
+                    </option>
+                    <option value="Badam"><span>Almond Rs.<span id="badam" class="itemPrice">700</span>/- Kg</span>
+                    </option>
+                    <option value="SoyaBean"><span>Nutrela Soya Chunks Rs.<span id="soya" class="itemPrice">150</span>/-
+                            Kg</span> </option>
+                </datalist>
+                <input type="number" id="quantity" placeholder="Qty">
+                <input type="number" id="date" placeholder="Date">
+                <button type="button" onclick="addItem()" id="mainbutton">Add Item</button>
+            </div>
+        </form>
+    </div>
+    <div class="result">
+        <h1 id="resulted"></h1>
+    </div>
+
+    <section>
+        <form class="formtag" action="">
+            <table id="invoiceForm">
+                <tr>
+                    <td colspan="3" rowspan="1">
+                        <h2 id="heading">heading</h2>
+                    </td>
+                    <td rowspan="2" colspan="2" ><p id="company-name">INVOICE</p></td>
+                <tr>
+                    <td colspan="3" rowspan="1">
+                        <p id="address">address</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <ul>
+                            <li>Invoice#</li>
+                            <li>Invoice Date</li>
+                        </ul>
+                    </td>
+                    <td colspan="3"> </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        Bill To
+                    </td>
+                    <td colspan="3"> Ship To</td>
+                </tr>
+                <!-- for  inserting data -->
+                <tr>
+                    <td colspan="2" id="">
+                    </td>
+                    <td colspan="3"></td>
+                </tr>
+                <!-- for  inserting data end -->
+
+                <tr>
+                    <td>#</td>
+                    <td>Item & Description</td>
+                    <td>Qty</td>
+                    <td>Rate</td>
+                    <td>Amount</td>
+                </tr>
+                <tr>
+                    <td colspan="2"></td>
+                    <td colspan="2">Tax Rate</td>
+                    <td id="taxRate"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"></td>
+                    <td colspan="2">Total</td>
+                    <td id="totalAfterTax"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div id="tdanking">
+                            <p>
+                                thanks for shopping witd us.
+                            </p>
+                        </div>
+                    </td>
+                    <td colspan="2">Balance Due</td>
+                    <td id="balanceDue"></td>
+                </tr>
+
+                <tr>
+                    <td colspan="5">
+                        <div id="terms">
+                            <h4>
+                                Terms &amp Conditions
+                            </h4>
+                            <p>
+                                Full payment is due upon receipt of this invoice. <br>
+                                Late payments may incur additional charges or interest as per the applicable laws.
+                            </p>
+                        </div>
+                </tr>
+            </table>
+        </form>
+    </section>
+
+</body>
+<script>
+
+    function addItem() {
+        var comPname = document.getElementById('partyName').innerHTML;
+        var addRess = document.getElementById('address').innerHTML;
+        var pinCode = parseInt(document.getElementById('pincode').value);
+        var gstNo = parseInt(document.getElementById('gst').value);
+        var vehicleNo = parseInt(document.getElementById('vehclno').value);
+        var qty = parseInt(document.getElementById('quantity').value);
+        var daTe = parseInt(document.getElementById('date').value);
+
+        var rice = document.getElementById('product').innerHTML;
+            console.log(rice)
+        var total = rice * qty;
+        document.getElementById('resulted').innerHTML = total;
+        // window.open('./invoiceform.html', '_blank');
+
+        document.getElementById('heading').value = comPname;
+        document.getElementById('address').innerHTML = addRess;
+    }
+
+</script>
+<script src="./invoice.js"></script>
+
+</html>

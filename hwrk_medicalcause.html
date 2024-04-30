@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var total = parseInt(prompt("Enter the number of classes held:"));
+      var attended = parseInt(prompt("Enter the number of classes attended:"));
+      var medicalcause = prompt(
+        "Do you have a medical cause? (Enter 'Y' or 'N')"
+      );
+
+      var percentage = (attended / total) * 100;
+
+      alert("Percentage of classes attended: " + percentage + "%");
+
+      if (percentage >= 75 || medicalcause === "Y") {
+        alert("Congratulations! You are allowed to do exam.");
+      } else {
+        alert(
+          "Sorry, you are not allowed to do exam due to low attendance and no medical cause."
+        );
+      }
+    </script>
+  </body>
+</html>

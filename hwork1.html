@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var value = parseInt(prompt("Enter Your Cart Value:"));
+      if (value >= 800) {
+        document.write("Congrats! You have availed Free Shipping" + "<br>");
+        document.write("You have to pay " + value);
+      } else {
+        document.write("Sorry! No free shipping on this order. Your total charges including shipping fee is Rs. " + (value + 40));
+      }
+    </script>
+  </body>
+</html>

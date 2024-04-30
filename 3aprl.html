@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Player {
+            constructor() {
+                this.position = 0;
+            }
+        }
+
+        function rollDice() {
+            var randomNumber = Math.floor(Math.random() * 6) + 1;
+            return randomNumber;
+        }
+
+        function getPosition(position) {
+            // 0 means snake and 1 means ladder
+            var obstacles = [
+                [1, 37, 1],
+                [4, 9, 1],
+                [8, 12, 1],
+                [21, 18, 1],
+                [28, 45, 1],
+                [32, 22, 0],
+                [36,26, 0],
+                [48, 32, 0],
+                [50, 13, 1],
+                [63, 50, 0],
+                [71, 20, 1],
+                [80, 18, 1],
+                [88, 55, 0],
+                [95, 40, 0],
+                [97, 20, 0],
+            ];
+
+            for (let i = 0; i < obstacles.length; i++) {
+                if (position == obstacles[i][0]) {
+                    if (obstacles[i][2] == 0) {
+                        console.log("position was >> ", position);
+                        position -= obstacles[i][1];
+                        console.log("stuck to a snake", obstacles[i][1]);
+                    } else {
+                        console.log("position was >> ", position);
+                        position += obstacles[i][1];
+                        console.log("stuck to a ladder", obstacles[i][1]);
+                    }
+                }
+            }
+
+            return position;
+        }
+
+        var player1 = new Player();
+        player1.position = 0;
+
+        while (player1.position !== 100) {
+            if (player1.position <= 100) {
+                console.log("---------------------------");
+                var rollTheDice = parseInt(prompt("ENTER 1 IF YOU WANT TO PLAY"));
+                if (rollTheDice == 1) {
+                    var num = rollDice();
+                    console.log("dice faced >> ", num);
+                    if (player1.position + num <= 100) {
+                        player1.position += num;
+                        player1.position = getPosition(player1.position);
+                    } else {
+                        // Do nothing
+                    }
+                } else {
+                    break;
+                }
+                console.log("current position", player1.position);
+            } else {
+                console.log("player1 won ");
+                break;
+            }
+        }
+    </script>
+</body>
+
+</html>

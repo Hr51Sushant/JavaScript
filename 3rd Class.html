@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div style="color: rgb(255, 0, 0)" id="js"></div>
+    <script>
+      var name = prompt("Please Enter Your Name");
+      var age = parseInt(prompt("Please Enter Your Age"));
+      if (age >= 18) {
+        document.getElementById("js").innerHTML = name;
+      } else {
+        document.getElementById("js").innerHTML = "Apki Age Kam Hai ";
+      }
+    </script>
+  </body>
+</html>

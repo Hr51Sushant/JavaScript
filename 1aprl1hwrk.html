@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var email = "admin@admin.com";
+        var mob_number = "123456789";
+        var password = "pass123";
+        var option = prompt("Choose login option:\n1. Log in with email\n2. Log in with mobile number");
+
+
+        if (option === '1') {
+
+            var inputEmail = prompt("Enter your email:");
+            var inputPassword = prompt("Enter your password:");
+
+
+            if (inputEmail === email && inputPassword === password) {
+                alert("Login successful!");
+            } else {
+                alert("Invalid email or password. Please try again.");
+            }
+
+        } else if (option === '2') {
+
+            var inputMobNumber = prompt("Enter your mobile number:");
+            var inputPassword = prompt("Enter your password:");
+
+
+            if (inputMobNumber === mob_number && inputPassword === password) {
+                alert("Login successful!");
+            } else {
+                alert("Invalid mobile number or password. Please try again.");
+            }
+
+        } else {
+            alert("Invalid option. Please try again.");
+        }
+
+    </script>
+</body>
+
+</html>

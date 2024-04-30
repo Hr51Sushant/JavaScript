@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var Total = parseInt(prompt("Enter the number of classes held:"));
+      var Attended = parseInt(prompt("Enter the number of classes attended:"));
+
+      var Percentage = (Attended / Total) * 100;
+
+      alert("Percentage of classes attended: " + Percentage + "%");
+
+      if (Percentage >= 75) {
+        alert("Congratulations! You are allowed to sit in the exam.");
+      } else {
+        alert(
+          "Sorry, you are not allowed to sit in the exam due to low attendance."
+        );
+      }
+    </script>
+  </body>
+</html>

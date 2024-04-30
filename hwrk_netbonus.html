@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var salary = parseFloat(prompt("Enter your salary:"));
+      var serviceyears = parseInt(prompt("Enter your years of service:"));
+
+      if (serviceyears > 5) {
+        var bonus = 0.05 * salary;
+        alert("Congratulations! You are eligible for a bonus.");
+        alert("Your net bonus amount is: Rs." + bonus);
+      } else { 
+        alert("Sorry, you are not eligible for a bonus.");
+      }
+    </script>
+  </body>
+</html>

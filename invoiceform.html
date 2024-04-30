@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="invoice.css">
+</head>
+
+<body>
+    <section>
+        <form class="formtag" action="">
+            <table id="invoiceForm">
+                <tr>
+                    <td colspan="3" rowspan="1">
+                        <h2 id="heading">heading</h2>
+                    </td>
+                    <td rowspan="2" colspan="2" id="company-name">INVOICE</td>
+                <tr>
+                    <td colspan="3" rowspan="1">
+                        <p id="address">address</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <ul>
+                            <li>Invoice#</li>
+                            <li>Invoice Date</li>
+                        </ul>
+                    </td>
+                    <td colspan="3"> </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        Bill To
+                    </td>
+                    <td colspan="3"> Ship To</td>
+                </tr>
+                <!-- for  inserting data -->
+                <tr>
+                    <td colspan="2" id="">
+                    </td>
+                    <td colspan="3"></td>
+                </tr>
+                <!-- for  inserting data end -->
+
+                <tr>
+                    <td>#</td>
+                    <td>Item & Description</td>
+                    <td>Qty</td>
+                    <td>Rate</td>
+                    <td>Amount</td>
+                </tr>
+                <tr>
+                    <td colspan="2"></td>
+                    <td colspan="2">Tax Rate</td>
+                    <td id="taxRate"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"></td>
+                    <td colspan="2">Total</td>
+                    <td id="totalAfterTax"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div id="tdanking">
+                            <p>
+                                thanks for shopping witd us.
+                            </p>
+                        </div>
+                    </td>
+                    <td colspan="2">Balance Due</td>
+                    <td id="balanceDue"></td>
+                </tr>
+
+                <tr>
+                    <td colspan="5">
+                        <div id="terms">
+                            <h4>
+                                Terms &amp Conditions
+                            </h4>
+                            <p>
+                                Full payment is due upon receipt of this invoice. <br>
+                                Late payments may incur additional charges or interest as per the applicable laws.
+                            </p>
+                        </div>
+                </tr>
+            </table>
+        </form>
+    </section>
+</body>
+<script src="./invoice.js"></script>
+
+</html>

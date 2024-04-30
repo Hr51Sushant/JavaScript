@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Generator</title>
+    <link rel="stylesheet" href="./invoice.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Invoice Input -->
+        <h3>Invoice Generator</h3>
+        <form name="rt" id="invoiceForm">
+            <div id="one">
+                <input type="number" name="invoiceno" id="billno" placeholder="Invoice No.">
+                <input type="text" name="dishq" id="partyName" placeholder="Company Name">
+                <input type="text" name="adres" id="adRis" placeholder="Address">
+                <input type="number" name="incod" id="pincode" placeholder="Pin Code">
+                <input type="number" name="gstno" id="gst" placeholder="Gst No.">
+                <input type="number" name="vehi" id="vehclno" placeholder="Vehicle No.">
+            </div>
+
+            <div id="two">
+                <input list="products" name="product" id="product" placeholder="Select Products">
+                <datalist id="products">
+                    <option value="Rice"><span id="ricename">Basmati Rice</span><span> Rs.200/- Kg</span>
+                    </option>
+
+                    <option value="Pulses"><span id="dalname">Arhar Dal Rs.60/- Kg</span>
+                    </option>
+                    <option value="Badam"><span id="badamname">Almond Rs.700/- Kg</span>
+                    </option>
+                    <option value="SoyaBean"><span id="soyaname">Nutrela Soya Chunks Rs.150/- Kg</span> </option>
+                </datalist>
+                <input type="number" name="quntity" id="quantity" placeholder="Qty">
+                <input type="date" name="dte" id="date" placeholder="Date">
+                <button type="button" onclick="addItem()" id="mainbutton">Add Item</button>
+            </div>
+        </form>
+    </div>
+    <div class="result">
+        <h1 id="resulted"></h1>
+    </div>
+
+    <section>
+        
+            <table id="invoiceForm">
+                <tr>
+                    <td colspan="3" rowspan="1">
+                        <h1 id="heading">heading</h1>
+                    </td>
+                    <td rowspan="3" colspan="2">
+                        <p>INVOICE</p>
+                    </td>
+                <tr>
+                    <td colspan="3" rowspan="1">
+                        <h4 id="address">address</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" rowspan="1">
+                        <h4 id="gstnn">gst</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="">
+                        <span>Invoice#</span> <br>
+                        <span>Invoice Date </span>
+                        <td colspan="">
+                            <span> <p id="invoNo"></p></span> <br>
+                            <span> <p id="invodate"></p> </span>
+                        </td>
+                        <td colspan="">
+                            
+                        </td>
+                    </td>
+                    <td colspan="2"> </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        Bill To
+                    </td>
+                    <td colspan="3"> Ship To</td>
+                </tr>
+                
+                
+              <div id="red">
+                <tr>
+                    <td>#</td>
+                    <td>Item & Description</td>
+                    <td>Qty</td>
+                    <td>Rate</td>
+                    <td>Amount</td>
+                </tr>
+              </div>
+                <!-- for  inserting data -->
+                <tr>
+                    <td>#</td>
+                    <td id="inputrice"></td>
+                    <td id="inputqty"></td>
+                    <td id="inputrate"></td>
+                    <td id="amount"></td>
+                </tr>
+                <!-- for  inserting data end -->
+                <tr>
+                    <td colspan="2"></td>
+                    <td colspan="2">Tax Rate</td>
+                    <td id="taxRate"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"></td>
+                    <td colspan="2">Total</td>
+                    <td id="totalAfterTax"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div id="tdanking">
+                            <p>
+                                thanks for shopping witd us.
+                            </p>
+                        </div>
+                    </td>
+                    <td colspan="2">Balance Due</td>
+                    <td id="balanceDue"></td>
+                </tr>
+
+                <tr>
+                    <td colspan="5">
+                        <div id="terms">
+                            <h4>
+                                Terms &amp Conditions
+                            </h4>
+                            <p>
+                                Full payment is due upon receipt of this invoice. <br>
+                                Late payments may incur additional charges or interest as per the applicable laws.
+                            </p>
+                        </div>
+                </tr>
+            </table>
+
+    </section>
+
+</body>
+<script>
+ 
+    function addItem() {
+        // var comPname = document.getElementById('partyName').innerHTML;
+        // var addRess = document.getElementById('address').innerHTML;
+        // var pinCode = parseInt(document.getElementById('pincode').value);
+        // var gstNo = parseInt(document.getElementById('gst').value);
+        // var vehicleNo = parseInt(document.getElementById('vehclno').value);
+        // var daTe = parseInt(document.getElementById('date').value);
+        // var rice = document.getElementById('product').innerHTML;
+        var invo = document.getElementById('billno').innerHTML;
+        
+        console.log(invo);
+        
+        var qty = parseInt(document.getElementById('quantity').value);
+        
+        var rice = document.rt.product.value;
+        var dal = document.rt.product.value;
+        var badam = document.rt.product.value;
+        var soya = document.rt.product.value;
+        if (rice == "Rice") {
+
+            var total = 200 * qty;
+        }
+        else if (dal == "Pulses") {
+            var total = 60 * qty;
+        }
+        else if (badam == "Badam") {
+            var total = 700 * qty;
+        }
+        else if (soya == "SoyaBean") {
+            var total = 150 * qty;
+        }
+
+        var putgst = 0;
+        var maxtotal = total;
+
+        if(qty<=25){
+            putgst=putgst + 8 +"%"
+                    total=total+(total*0.08)
+                    
+                }
+                else{
+                    putgst="nil"
+                }
+
+        document.getElementById('totalAfterTax').innerHTML = maxtotal;
+        document.getElementById('amount').innerHTML = total;
+        // window.open('./invoiceform.html', '_blank');
+        
+        document.getElementById('heading').innerHTML = document.rt.dishq.value;
+        document.getElementById('address').innerHTML = document.rt.adres.value;
+        document.getElementById('gstnn').innerHTML = document.rt.gstno.value;
+        // document.getElementById('invodate').innerHTML = document.rt.dte.value;
+        // document.getElementById('invoNo').innerHTML = document.rt.invoiceno.value;
+        
+        // iems and discription-----------------------------------------------
+        document.getElementById('inputrice').innerHTML = document.rt.product.value;
+        document.getElementById('inputqty').innerHTML = document.rt.quntity.value;
+        
+        
+        if (rice == "Rice") {
+            
+            var rate = "200";
+        }
+        else if (dal == "Pulses") {
+            var rate = 60;
+        }
+        else if (badam == "Badam") {
+            var rate = 700;
+        }
+        else if (soya == "SoyaBean") {
+            var rate = 150;
+        }
+        document.getElementById('inputrate').innerHTML = rate;
+        
+        
+
+        document.getElementById('taxRate').innerHTML = total;
+        
+      
+
+    }
+
+</script>
+<script src="./invoice.js"></script>
+
+</html>

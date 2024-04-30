@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        tr,
+        td {
+            border: 2px solid black;
+        }
+        .none{
+            border: none;
+        }
+        marquee{
+            behavior: slide;
+        }
+    </style>
+</head>
+
+<body>
+    <marquee behavior="alternate" direction="right" scrollamount="8"><H1 style="font-size: 40px;">
+        <u> RAJ ENTERPRISES</u> 
+      </H1>
+  </marquee>
+    
+    <table class="none">
+ <form action="" name="f">
+  <tr> <td class="none"> BILL:</td> <td class="none"><input type="text" name="name" id=""></td></tr>  
+    <tr> <td class="none">ADDRESS:</td><td class="none"> <input type="text" name="address" id=""></td></tr>  
+   <tr> <td class="none"> PIN:</td> <td class="none"><input type="text" name="pincode" id=""></td></tr>  
+   <tr> <td class="none">GST:</td> <td class="none"><input type="text" name="gst" id=""></td></tr>  
+   <tr> <td class="none"> VEHICLE: </td><td class="none"><input type="text" name="vnumber" id=""></td></tr>  
+   <tr>  <td class="none">DATE: </td><td class="none"><input type="datetime-local" name="date" id=""></td></tr>  
+   <tr>  <td class="none">DRIVER: </td><td class="none"><input type="text" name="driver" id=""></td></tr>  
+<tr><td class="none">ITEMS:</td> <td class="none"><input list="raj" name="kites">
+    <datalist id="raj">
+        <option value="CHANA DAAL">
+            <option value="RICE">
+                <option value="SUGAR">
+                </datalist></td>
+              </tr>
+   
+
+   <tr><td class="none"> BEGS:</td> 
+    <td class="none"><input type="text" name="begs" id=""></td>
+    </tr>  
+
+   <tr><td class="none"> WEIGHT:</td>
+    <td class="none"> <input type="text" name="weight" id=""></td>
+   </tr>   
+     
+   <tr><td class="none"> INVOICE:</td><td class="none"><input type="text" name="invoice" id=""></td></tr>  
+    
+  <tr><td> <input type="submit" value="GENERATE BILL" onclick="bill()"></td></tr>  
+ 
+
+
+</form>
+</table>
+
+
+    <script>
+        var sum=0
+        function bill(){
+
+            var bill = document.f.name.value;
+            var address =document.f.address.value;
+            var pin = document.f.pincode.value;
+            var gst = document.f.gst.value;
+            var vehicle = document.f.vnumber.value;
+            var date = document.f.date.value;
+            var driver = document.f.driver.value;
+            var items = document.f.kites.value;
+             
+            if(items=="CHANA DAAL"){
+                price=sum+60
+
+            }
+            else if(items=="RICE"){
+                price=sum+40
+
+            }
+            else if(items=="SUGAR"){
+                price=sum+45
+
+            }
+        
+            var begs = parseInt(document.f.begs.value);
+           
+            var weight = parseInt(document.f.weight.value);
+            
+            var invoice = document.f.invoice.value;
+            
+            
+            var addedgst= 0
+            var total = begs * price*weight;
+
+            var z=total
+            
+            
+            document.write("<h1>M/S RAJ ENTERPRISES</h1>")
+            document.write( "<P style = 'margin-left: 100px;'>108 / 1, K.C.PLAZA COMPLEX BANIYA WARA BALLABGARH FARIDABAD HARYANA - 121004 <br>  Contact: +91 9813822992, +91 9050443074, sdagar009@gmail.com   GST No.A / F </P > ")
+
+                if(weight<=25){
+                    addedgst=addedgst + 8 +"%"
+                    total=total+(total*0.08)
+
+                }
+                else{
+                    addedgst="nil"
+                }
+                
+            
+    document.write("<h3>Bill to . " + bill + "   </h3>")
+    document.write("<h3 style='margin-left: 50px;margin-top: -15px;'>  Address:-" + address + "  Pin code:-" + pin + "</h3>")
+    document.write("<h3 style='margin-left: 50px;'> GST number :-" + gst + "</h3>")
+    document.write("<hr>")
+    
+    
+    document.write("<h3> Invoice NO. " + invoice + "&nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp " + "vehicle No." + vehicle + " </h3>") 
+    
+    
+    document.write("<h3>Date :" + date + " &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp " + "driver name :" + driver + "</h3>")
+    
+    document.write("<h3>[product/Service 1] SALE" + "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp " + "Time : 10 AM </h3>")
+    document.write("<table border='2'>")
+    
+    document.write("<tr> <td>  &nbsp &nbsp &nbsp description   &nbsp &nbsp &nbsp   </td> <td>  &nbsp &nbsp &nbsp Quantity  &nbsp &nbsp &nbsp</td> <td> &nbsp &nbsp &nbsp  Price Of 1KG &nbsp &nbsp &nbsp</td> <td>  &nbsp &nbsp &nbsp total price  &nbsp &nbsp &nbsp</td></tr>")
+    document.write("<tr> <td>  &nbsp &nbsp &nbsp " + items +"&nbsp (NET WEIGHT "+ weight+" KG PER BEG)   &nbsp &nbsp &nbsp   </td> <td>  &nbsp &nbsp &nbsp" + begs + "BEGS  &nbsp &nbsp &nbsp</td> <td> &nbsp &nbsp &nbsp" + price + "  &nbsp &nbsp &nbsp</td> <td>  &nbsp &nbsp &nbsp" + z + "  &nbsp &nbsp &nbsp</td></tr>")
+
+    
+  
+    
+    document.write("<tr> <td>  &nbsp &nbsp &nbsp    &nbsp &nbsp &nbsp   </td> <td>  &nbsp &nbsp &nbsp   &nbsp &nbsp &nbsp</td> <td> &nbsp &nbsp &nbsp TOTAL  &nbsp &nbsp &nbsp</td> <td>  &nbsp &nbsp &nbsp " + z + " &nbsp &nbsp &nbsp</td></tr>")
+
+    document.write("</table>")
+    
+    document.write("  ")
+    document.write(" <h3>Subtotal : [Subtotal amount]:-" + z + "</h3>")
+    document.write(" <h3>Tax(GST) : [Tax Amount]:- &nbsp &nbsp "+ addedgst +"</h3>")
+    document.write(" <h3>Total : [Total Amount]:- &nbsp &nbsp &nbsp &nbsp" + total + "</h3>")
+    document.write("  <h3> payments terms:[payment terms,e.g.,Net 7days] </h4> <h4 style='margin-left: 460px;margin-top:-35px'>For [RAJ ENTERPRISES]    <br>   <br>  author  <br>  <br>      Authorised Signature </h4>")
+        
+        
+        
+        
+    }
+        </script>
+        
+
+        
+        
+        
+        
+
+        
+</body>
+
+</html>

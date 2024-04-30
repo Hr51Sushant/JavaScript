@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #alphabet {
+      border: 2px solid red;
+      height: 5vh;
+      border-radius: 9px;
+    }
+    button {
+      background-color: black;
+      color: white;
+      border: 0px solid black;
+      border-radius: 20px;
+      height: 5vh;
+      width: 8%;
+    }
+  </style>
+  <body>
+    <input type="text" placeholder="Please enter value." id="alphabet" />
+    <button onclick="Click()">Submit</button>
+    <script>
+      function Click() {
+        var days = document.getElementById("alphabet").value;
+        switch (days) {
+          case "a":
+            alert("Monday");
+            break;
+          case "b":
+            alert("Tuesday");
+            break;
+          case "c":
+            alert("Wednesday");
+            break;
+          case "d":
+            alert("Thursday");
+            break;
+          case "e":
+            alert("Friday");
+            break;
+          case "f":
+            alert("Saturday");
+            break;
+          case "g":
+            alert("Sunday");
+            break;
+          default:
+            alert("Invalid Input");
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>

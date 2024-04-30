@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    }
+
+    body {
+      background-color: #2a5491;
+    }
+    #container {
+      width: 100%;
+      height: 80vh;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+    .left {
+      width: 35%;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .left img {
+        margin-top: 40px;
+      height: 30vh;
+      color: white;
+      filter: invert(100%);
+    }
+    .right {
+      width: 20%;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .h3_cast {
+      margin-top: 10px;
+    }
+    .ptag {
+      margin-top: 4px;
+      font-size: 6px;
+    }
+    .android_ptg {
+      margin-top: 14px;
+      font-size: 6px;
+    }
+    .yellow {
+      color: rgb(255, 199, 96);
+    }
+
+    .button button {
+      cursor: pointer;
+        margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: helvetica;
+      color: #ffffff !important;
+      font-size: 5px;
+      text-shadow: 0px 0px 4px #000000;
+      box-shadow: 0px 0px 2px #3866a3;
+      padding: 0px 10px;
+      height: 7vh;
+      width: 150%;
+      border-radius: 2px;
+      border: 1px solid #3866a3;
+      background: #4883d1;
+    }
+    .button button:hover {
+      color: #ffffff !important;
+      background: #56acff;
+    }
+
+    .button2 button {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: helvetica;
+      color: #ffffff !important;
+      font-size: 5px;
+      text-shadow: 0px 0px 4px #757696;
+      box-shadow: 0px 0px 2px #757696;
+      padding: 0px 10px;
+      height: 7vh;
+      width: 170%;
+      border-radius: 2px;
+      border: 1px solid #757696;
+      background: #757696;
+      margin-top: 5px;
+    }
+    .button2 button:hover {
+      color: #ffffff !important;
+      background: #757696;
+    }
+
+    .loader {
+      height: 3px;
+      width: 35px;
+      background: linear-gradient(rgb(255, 199, 96) 0 0),
+        linear-gradient(rgb(255, 199, 96) 0 0), #e4e4ed;
+      background-size: 60% 100%;
+      background-repeat: no-repeat;
+      animation: p6 3s infinite;
+    }
+
+    .user_guide {
+      height: 20vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .user_guide p {
+      font-size: 5px;
+      color: white;
+      margin-bottom: 3px;
+      margin-top: 20px;
+    }
+
+    @keyframes p6 {
+      0% {
+        background-position: -150% 0, -150% 0;
+      }
+      66% {
+        background-position: 250% 0, -150% 0;
+      }
+      100% {
+        background-position: 250% 0, 250% 0;
+      }
+    }
+  </style>
+  <body>
+    <div id="container">
+      <div class="left">
+        <div class="img_cast">
+          <img src="./screen-mirroring.png" alt="" />
+        </div>
+        <div class="h3_cast">
+          <h3>
+            <span>Miracast</span>
+          </h3>
+        </div>
+        <div class="ptag">
+          <p>
+            <span>
+              Wireless Display: You can cast any<br />miracast-compliant device
+              to the TV
+            </span>
+          </p>
+        </div>
+        <div class="android_ptg">
+          <p>
+            <span class="yellow">Android MITV</span>
+            <span>waiting for connection...</span>
+          </p>
+        </div>
+        <div class="loader">
+          <div class="loader"></div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="button">
+          <button>
+            Definition Priority
+            <!-- <i
+              class="fa-duotone fa-circle-check"
+              style="--fa-primary-color: #ffffff; --fa-secondary-color: #ffffff"
+            ></i> -->
+            <!-- <i class="fa-solid fa-check"></i> -->
+            <i class="fa-solid fa-circle-check"></i>
+          </button>
+        </div>
+        <div class="button2">
+          <button>Fluency Priority</button>
+        </div>
+      </div>
+    </div>
+    <div class="user_guide">
+      <p>USER GUIDE</p>
+      <i class="fa-solid fa-chevron-down fa-2xs" style="color: #ffffff"></i>
+    </div>
+  </body>
+</html>
